@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledDate = styled.div`
   padding: 10px;
   background-color: #201f1fc5;
-  border: 1px solid white;
+  border: 2px solid #fff;
   border-radius: 8px;
   align-items: center;
   font-weight: bold;

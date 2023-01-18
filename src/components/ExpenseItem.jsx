@@ -3,7 +3,7 @@ import ExpenseDate from "./ExpenseDate";
 
 const StyledHeader = styled.div`
   color: #fff;
-  width: 50%;
+  width: 100%;
   height: fit-content;
   border-radius: 5px;
   padding: 10px;
@@ -16,17 +16,6 @@ const StyledHeader = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
-  }
-  .date {
-    width: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #353535;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #fff;
   }
   .price {
     width: 80px;
@@ -41,20 +30,16 @@ const StyledHeader = styled.div`
   }
 `;
 
-const ExpenseItem = () => {
-  const item = "Car Insurance";
-  const date = new Date(Date.UTC(2020, 10, 2, 3)).toLocaleString();
-  const price = 294.69;
-
+const ExpenseItem = (props) => {
   return (
     <StyledHeader>
       <div className="item">
-        <ExpenseDate dateS={date} />
+        <ExpenseDate dateS={props.date} />
         <div>
-          <h1>{item}</h1>
+          <h1>{props.title}</h1>
         </div>
       </div>
-      <div className="price">${price}</div>
+      <div className="price">${props.amount}</div>
     </StyledHeader>
   );
 };
