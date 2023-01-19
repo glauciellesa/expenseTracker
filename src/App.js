@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/expense/Expenses";
 
 const StyledApp = styled.div`
   display: flex;
