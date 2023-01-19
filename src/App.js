@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Expenses from "./components/expense/Expenses";
+import NewExpense from "./components/newExpense/NewExpense";
 
 const StyledApp = styled.div`
   display: flex;
@@ -20,6 +21,7 @@ function App() {
   return (
     <StyledApp>
       <h1> Let's get started! </h1>
+      <NewExpense data={expensesData} />
       <Expenses items={expensesData} />
     </StyledApp>
   );

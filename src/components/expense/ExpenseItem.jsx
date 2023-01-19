@@ -22,7 +22,7 @@ const StyledHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #b209b2;
+    background-color: #a323e8;
     font-size: 20px;
     padding: 14px;
     border-radius: 8px;
