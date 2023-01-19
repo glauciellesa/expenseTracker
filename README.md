@@ -3,6 +3,14 @@
 Expense tracker is a program to control our expenses year by year,
 we can filter the year in which we want to check our expenses, as well as add new expenses as they arise.
 
+# What I'm learned
+
+- I've learned the good practice of a Component(small component with just one reponsabilit), how to pass Props to my components
+
+# What were the biggest challenges in this project?
+
+# How did I overcome these challenges?
+
 # Technologies 🏷️
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)

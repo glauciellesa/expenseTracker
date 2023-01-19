@@ -2,11 +2,12 @@ import styled from "styled-components";
 import Expenses from "./components/Expenses";
 
 const StyledApp = styled.div`
-  padding: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  margin: 40px;
+  background-color: #201f1fc5;
 `;
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
   return (
     <StyledApp>
       <h1> Let's get started! </h1>
-      <Expenses expenses={expensesData} />
+      <Expenses items={expensesData} />
     </StyledApp>
   );
 }

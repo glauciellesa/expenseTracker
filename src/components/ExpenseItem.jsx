@@ -6,7 +6,7 @@ const StyledHeader = styled.div`
   width: 100%;
   height: fit-content;
   border-radius: 5px;
-  padding: 10px;
+  padding: 20px;
   background-color: #636363;
   display: flex;
   justify-content: space-between;
