@@ -22,7 +22,7 @@ to help me and to style this componet in a more organized way */
 
 const StyledHeader = styled.div`
   color: #fff;
-  width: 100%;
+  width: 60vw;
   height: fit-content;
   border-radius: 5px;
   padding: 20px;

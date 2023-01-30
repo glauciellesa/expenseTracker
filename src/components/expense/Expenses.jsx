@@ -1,33 +1,47 @@
+import { useState } from "react";
 import styled from "styled-components";
+import ExpensesFilter from "../expensesFilter/ExpensesFilter";
 import ExpenseItem from "./ExpenseItem";
 
 const Expenses = (props) => {
+  console.log({ props });
+  const [filteredYear, setFilteredYear] = useState("2020");
+  const selectedYearHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
   return (
-    <>
+    <StyledExpense>
+      <ExpensesFilter
+        selected={filteredYear}
+        expenses={props.items}
+        onSelectedYear={selectedYearHandler}
+      />
       {props.items.map((elem) => {
         return (
-          <StyledExpense key={elem.title}>
+          <div key={elem.title}>
             <ExpenseItem
               title={elem.title}
               amount={elem.amount}
               date={elem.date}
             />
-          </StyledExpense>
+          </div>
         );
       })}
-    </>
+    </StyledExpense>
   );
 };
 export default Expenses;
 
 const StyledExpense = styled.div`
-  width: 70vw;
-  padding: 20px;
+  margin-top: 20px;
+  background-color: #343434;
+  border-radius: 8px;
+  width: 75%;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 `;
 
 /*

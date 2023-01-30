@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Expenses from "./components/expense/Expenses";
-import ExpensesFilter from "./components/expensesFilter/ExpensesFilter";
 import NewExpense from "./components/newExpense/NewExpense";
 
 function App() {
@@ -8,8 +7,9 @@ function App() {
     { title: "Car Insurance", amount: 24.16, date: new Date(2022, 6, 8) },
     { title: "Toilet paper", amount: 297.76, date: new Date(2021, 3, 28) },
     { title: "Pets", amount: 190.76, date: new Date(2021, 5, 1) },
-    { title: "Pens", amount: 19.76, date: new Date(2023, 5, 1) },
-    { title: "paper", amount: 30.76, date: new Date(2019, 10, 4) },
+    { title: "Pens", amount: 19.76, date: new Date(2023, 5, 18) },
+    { title: "Shampoo", amount: 49.76, date: new Date(2020, 3, 21) },
+    { title: "Cream", amount: 30.76, date: new Date(2019, 10, 4) },
   ];
 
   const addExpenseHandler = (expense) => {
@@ -21,7 +21,6 @@ function App() {
     <StyledApp>
       <h1> Let's get started! </h1>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <ExpensesFilter expenses={expensesData} />
       <Expenses items={expensesData} />
     </StyledApp>
   );

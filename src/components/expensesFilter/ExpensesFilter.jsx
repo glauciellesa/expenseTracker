@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 import ExpenseGrafic from "../expenseGrafic/ExpenseGrafic";
 import YearOption from "./YearOption";
@@ -7,14 +6,15 @@ const ExpensesFilter = (props) => {
   const year = props.expenses.map((eachDate) => eachDate.date.getFullYear());
 
   const dropDownChangeHandler = (event) => {
-    console.log("selected", event.target.value);
+    const SelectedYear = event.target.value;
+    props.onSelectedYear(SelectedYear);
   };
 
   return (
     <StyledFilter>
       <div className="filter">
         <h3>Filter by year</h3>
-        <select onChange={dropDownChangeHandler}>
+        <select value={props.selected} onChange={dropDownChangeHandler}>
           <YearOption yearOption={year} />
         </select>
       </div>
@@ -39,6 +39,6 @@ const StyledFilter = styled.div`
   select {
     height: 30px;
     border-radius: 4px;
-    padding: 0 8px;
+    padding: 0 25px;
   }
 `;

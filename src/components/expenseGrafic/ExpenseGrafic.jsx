@@ -19,11 +19,9 @@ const ExpenseGrafic = () => {
     <StyledGrafic>
       <div className="container">
         {month.map((eachMonth) => (
-          <>
-            <div key={eachMonth} className="content">
-              {eachMonth}
-            </div>
-          </>
+          <div key={eachMonth} className="content">
+            {eachMonth}
+          </div>
         ))}
       </div>
     </StyledGrafic>
@@ -48,7 +46,7 @@ const StyledGrafic = styled.div`
     align-items: flex-end;
     color: black;
     font-size: smaller;
-    margin: 10px 20px;
+    margin: 0px 15px;
     gap: 10px;
     width: 10px;
     height: 80px;
