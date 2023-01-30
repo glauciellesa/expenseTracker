@@ -30,5 +30,5 @@ const StyledNewExpense = styled.div`
   height: 45vh;
   border-radius: 8px;
   padding: 10px;
-  background-color: #d49cf2;
+  background-color: rgb(222, 156, 242);
 `;

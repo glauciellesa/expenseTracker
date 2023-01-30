@@ -165,6 +165,6 @@ const StyledExpenseForm = styled.div`
     padding: 20px;
     border: none;
     border-radius: 8px;
-    background-color: #a323e8;
+    background-color: rgb(222, 35, 232);
   }
 `;
