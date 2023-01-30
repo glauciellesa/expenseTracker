@@ -1,6 +1,25 @@
 import styled from "styled-components";
 import ExpenseDate from "./ExpenseDate";
 
+const ExpenseItem = (props) => {
+  return (
+    <StyledHeader>
+      <div className="item">
+        <ExpenseDate date={props.date} />
+        <div>
+          <h1>{props.title}</h1>
+        </div>
+      </div>
+      <div className="price">${props.amount}</div>
+    </StyledHeader>
+  );
+};
+
+export default ExpenseItem;
+
+/* Into this component i'll render each props insid a div. Because i'm working with date i'll create another component
+to help me and to style this componet in a more organized way */
+
 const StyledHeader = styled.div`
   color: #fff;
   width: 100%;
@@ -29,19 +48,3 @@ const StyledHeader = styled.div`
     border: 2px solid white;
   }
 `;
-
-const ExpenseItem = (props) => {
-  return (
-    <StyledHeader>
-      <div className="item">
-        <ExpenseDate dateS={props.date} />
-        <div>
-          <h1>{props.title}</h1>
-        </div>
-      </div>
-      <div className="price">${props.amount}</div>
-    </StyledHeader>
-  );
-};
-
-export default ExpenseItem;

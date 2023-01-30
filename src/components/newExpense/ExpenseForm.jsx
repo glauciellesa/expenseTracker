@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [entiredTitle, setEntiredTitle] = useState("");
   const [entiredAmount, setEntiredAmount] = useState("");
   const [entiredDate, setEntiredDate] = useState("");
@@ -11,7 +11,7 @@ const ExpenseForm = () => {
     enteredDate: "",
   }); */
   const titleChangeHandler = (event) => {
-    setEntiredTitle(event.target.value);
+    setEntiredTitle(event.target.value); //take the input value typed
     /* setUserInput(() => {
       return {
         ...userInput,
@@ -42,30 +42,48 @@ const ExpenseForm = () => {
     }); */
   };
 
-  const submitHandler = (event) => {
-    event.preventDefault(); // will prevent the page from reloading once the button is clicked
+  const submitHandlerForm = (event) => {
+    event.preventDefault(); // will prevent the page from refresh once the button is clicked
     const expenseData = {
       title: entiredTitle,
       amount: entiredAmount,
       data: new Date(entiredDate), //As entiredData is a string I'll need to convert it to a objetct using the constroctur new Data()
     };
-    console.log(expenseData);
+    //Now I'll use the event function I've passed as a pointer in newExpense, whenever save event occurs.
+    props.onSaveExpenseData(expenseData);
+    //once sumitHandlerForm is called we can reset the value of our input passing the empty props back to our inputs
+    setEntiredTitle("");
+    setEntiredAmount("");
+    setEntiredDate("");
   };
+
   return (
     <StyledExpenseForm>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandlerForm}>
         <div className="newExpense-container">
           <div className="newExpense-item">
             <label htmlFor="title">Title</label>
-            <input type="text" onChange={titleChangeHandler} />
+            <input
+              type="text"
+              value={entiredTitle} //Two-way binding is used to passe back value into the input
+              onChange={titleChangeHandler}
+            />
           </div>
           <div className="newExpense-item">
             <label htmlFor="title">Amount</label>
-            <input type="string" onChange={amountChangeHandler} />
+            <input
+              type="string"
+              value={entiredAmount}
+              onChange={amountChangeHandler}
+            />
           </div>
           <div className="newExpense-item">
             <label htmlFor="title">Date</label>
-            <input type="date" onChange={dateChangeHandler} />
+            <input
+              type="date"
+              value={entiredDate}
+              onChange={dateChangeHandler}
+            />
           </div>
         </div>
         <div className="newExpense-action">
@@ -77,6 +95,35 @@ const ExpenseForm = () => {
 };
 
 export default ExpenseForm;
+
+/* 
+Into my form expenses I'll creat a form 
+
+return(
+  <form onSubmit={this funtion will be handled when the button be clicked. So once I've 
+typed all my inputs I'll click the button to send the data, as I don't want any refresh on 
+my page I'll use my preventDefault() function js. After as I need take this data and save it 
+in a object, I'll need to create a variable to receive this data
+exple:.
+const expenseData = {
+      title: entiredTitle,
+      ....
+    }
+ //once sumitHandlerForm is called we can reset the value of our input passing the empty props back to our inputs
+    setEntiredTitle("");
+}>
+  <div>
+  <lable></lable>
+  <input onchange={the function here will take the event target value that was typed here and will be passed to my 
+    set______, the function of my useState } value={here is the value of my useState, 
+    because as I'm using two-way binding that allows to gather use input and also change input value upon form submission.
+     (used to reset value after saved it in a variable) } />
+  </div>
+  <button type=submite>Add expenses</button>
+  </form>
+)
+
+*/
 
 const StyledExpenseForm = styled.div`
   .newExpense-container {
