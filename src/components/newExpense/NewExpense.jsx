@@ -27,7 +27,7 @@ handler this data that i recieved as props, so I'll copy the enterdExpenseData a
 
 const StyledNewExpense = styled.div`
   width: 70vw;
-  height: 45vh;
+  height: 40vh;
   border-radius: 8px;
   padding: 10px;
   background-color: rgb(222, 156, 242);

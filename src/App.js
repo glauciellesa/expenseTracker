@@ -22,7 +22,6 @@ function App() {
       <h1> Let's get started! </h1>
       <NewExpense onAddExpense={addExpenseHandler} />
       <ExpensesFilter expenses={expensesData} />
-
       <Expenses items={expensesData} />
     </StyledApp>
   );
@@ -39,6 +38,5 @@ const StyledApp = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 40px;
   background-color: #201f1fc5;
 `;

@@ -61,33 +61,35 @@ const ExpenseForm = (props) => {
     <StyledExpenseForm>
       <form onSubmit={submitHandlerForm}>
         <div className="newExpense-container">
-          <div className="newExpense-item">
-            <label htmlFor="title">Title</label>
-            <input
-              type="text"
-              value={entiredTitle} //Two-way binding is used to passe back value into the input
-              onChange={titleChangeHandler}
-            />
+          <div className="newExpense-content">
+            <div className="newExpense-item">
+              <label htmlFor="title">Title</label>
+              <input
+                type="text"
+                value={entiredTitle} //Two-way binding is used to passe back value into the input
+                onChange={titleChangeHandler}
+              />
+            </div>
+            <div className="newExpense-item">
+              <label htmlFor="title">Amount</label>
+              <input
+                type="string"
+                value={entiredAmount}
+                onChange={amountChangeHandler}
+              />
+            </div>
+            <div className="newExpense-item">
+              <label htmlFor="title">Date</label>
+              <input
+                type="date"
+                value={entiredDate}
+                onChange={dateChangeHandler}
+              />
+            </div>
           </div>
-          <div className="newExpense-item">
-            <label htmlFor="title">Amount</label>
-            <input
-              type="string"
-              value={entiredAmount}
-              onChange={amountChangeHandler}
-            />
+          <div className="newExpense-action">
+            <button type="submit">Add Expense</button>
           </div>
-          <div className="newExpense-item">
-            <label htmlFor="title">Date</label>
-            <input
-              type="date"
-              value={entiredDate}
-              onChange={dateChangeHandler}
-            />
-          </div>
-        </div>
-        <div className="newExpense-action">
-          <button type="submit">Add Expense</button>
         </div>
       </form>
     </StyledExpenseForm>
@@ -126,14 +128,18 @@ const expenseData = {
 */
 
 const StyledExpenseForm = styled.div`
-  .newExpense-container {
-    height: 40px;
+  padding: 10px;
+  .newExpense-content {
     font-size: 1.5rem;
     font-weight: 700;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 170px;
   }
   .newExpense-item {
-    padding: 10px;
+    width: 20px;
+    padding: 8px;
   }
   label {
     padding-right: 10px;
@@ -154,9 +160,9 @@ const StyledExpenseForm = styled.div`
     background-color: #fff;
   }
   .newExpense-action {
-    padding: 20px;
-    display: flex;
-    justify-content: flex-end;
+    padding: 10px;
+    position: absolute;
+    right: 20%;
   }
 
   button {
