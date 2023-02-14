@@ -1,8 +1,10 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Expenses from "./components/expense/Expenses";
 import NewExpense from "./components/newExpense/NewExpense";
 
 function App() {
+  const [counter, setCounter] = useState(0);
   const expensesData = [
     { title: "Car Insurance", amount: 24.16, date: new Date(2022, 6, 8) },
     { title: "Toilet paper", amount: 297.76, date: new Date(2021, 3, 28) },
@@ -16,10 +18,14 @@ function App() {
     expensesData.push(expense);
     console.log({ expensesData });
   };
+  const countfunc = () => {
+    setCounter((prevCounter) => prevCounter + 1);
+  };
 
   return (
     <StyledApp>
       <h1> Let's get started! </h1>
+      <button onClick={countfunc}> increment {counter} </button>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expensesData} />
     </StyledApp>

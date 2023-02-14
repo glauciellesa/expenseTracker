@@ -4,7 +4,6 @@ import ExpensesFilter from "../expensesFilter/ExpensesFilter";
 import ExpenseItem from "./ExpenseItem";
 
 const Expenses = (props) => {
-  console.log({ props });
   const [filteredYear, setFilteredYear] = useState("2020");
   const selectedYearHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
@@ -16,17 +15,15 @@ const Expenses = (props) => {
         expenses={props.items}
         onSelectedYear={selectedYearHandler}
       />
-      {props.items.map((elem) => {
-        return (
-          <div key={elem.title}>
-            <ExpenseItem
-              title={elem.title}
-              amount={elem.amount}
-              date={elem.date}
-            />
-          </div>
-        );
-      })}
+      {props.items.map((elem) => (
+        <div key={elem.title}>
+          <ExpenseItem
+            title={elem.title}
+            amount={elem.amount}
+            date={elem.date}
+          />
+        </div>
+      ))}
     </StyledExpense>
   );
 };
