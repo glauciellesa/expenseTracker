@@ -129,12 +129,14 @@ const expenseData = {
 
 const StyledExpenseForm = styled.div`
   padding: 10px;
+
   .newExpense-content {
     font-size: 1.5rem;
     font-weight: 700;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    width: 100%;
     height: 170px;
   }
   .newExpense-item {
@@ -171,6 +173,7 @@ const StyledExpenseForm = styled.div`
     padding: 20px;
     border: none;
     border-radius: 8px;
+    color: #fff;
     background-color: rgb(222, 35, 232);
   }
 `;
