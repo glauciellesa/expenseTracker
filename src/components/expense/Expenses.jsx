@@ -1,10 +1,10 @@
 import { useState } from "react";
 import styled from "styled-components";
 import ExpensesFilter from "../expensesFilter/ExpensesFilter";
-import ExpenseItem from "./ExpenseItem";
+import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
-  const [filteredYear, setFilteredYear] = useState("2020");
+  const [filteredYear, setFilteredYear] = useState("2023");
   const selectedYearHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
@@ -12,6 +12,7 @@ const Expenses = (props) => {
   const filteredExpense = props.items.filter(
     (expense) => expense.date.getFullYear().toString() === filteredYear
   );
+
   return (
     <StyledExpense>
       <ExpensesFilter
@@ -19,15 +20,7 @@ const Expenses = (props) => {
         expenses={props.items}
         onSelectedYear={selectedYearHandler}
       />
-      {filteredExpense.map((elem) => (
-        <div key={elem.title}>
-          <ExpenseItem
-            title={elem.title}
-            amount={elem.amount}
-            date={elem.date}
-          />
-        </div>
-      ))}
+      <ExpensesList filteredItems={filteredExpense} />
     </StyledExpense>
   );
 };
@@ -35,6 +28,7 @@ export default Expenses;
 
 const StyledExpense = styled.div`
   margin-top: 20px;
+  padding: 20px 0 40px 0;
   background-color: #343434;
   border-radius: 8px;
   width: 75%;

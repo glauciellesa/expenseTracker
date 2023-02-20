@@ -36,6 +36,9 @@ As I want that app receive props from the child NewExpense I'll need create my o
 */
 
 const StyledApp = styled.div`
+  padding: 20px;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
