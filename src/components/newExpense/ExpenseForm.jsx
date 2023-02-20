@@ -47,8 +47,9 @@ const ExpenseForm = (props) => {
     const expenseData = {
       title: entiredTitle,
       amount: entiredAmount,
-      data: new Date(entiredDate), //As entiredData is a string I'll need to convert it to a objetct using the constroctur new Data()
+      date: new Date(entiredDate), //As entiredData is a string I'll need to convert it to a objetct using the constroctur new Data()
     };
+
     //Now I'll use the event function I've passed as a pointer in newExpense, whenever save event occurs.
     props.onSaveExpenseData(expenseData);
     //once sumitHandlerForm is called we can reset the value of our input passing the empty props back to our inputs

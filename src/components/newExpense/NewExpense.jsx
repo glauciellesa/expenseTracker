@@ -7,6 +7,7 @@ const NewExpense = (props) => {
       ...enteredExpenseData,
       id: Math.random().toString(),
     };
+
     //My parente App component called NewExpense and sent to him props. So NewExpense compenent receives the reference to the parent function as a prop.
     props.onAddExpense(expenseData);
   };

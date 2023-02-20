@@ -3,11 +3,11 @@ import ExpenseGrafic from "../expenseGrafic/ExpenseGrafic";
 import YearOption from "./YearOption";
 
 const ExpensesFilter = (props) => {
-  const year = props.expenses.map((eachDate) => eachDate.date.getFullYear());
+  const year = props.expenses.map((eachDate) => eachDate.date.getFullYear()); //cycle through my array to just print year option
 
   const dropDownChangeHandler = (event) => {
-    const SelectedYear = event.target.value;
-    props.onSelectedYear(SelectedYear);
+    const selectedYear = event.target.value;
+    props.onSelectedYear(selectedYear);
   };
 
   return (
