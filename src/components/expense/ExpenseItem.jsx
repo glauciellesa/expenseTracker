@@ -20,8 +20,7 @@ export default ExpenseItem;
 /* Into this component i'll render each props insid a div. Because i'm working with date i'll create another component
 to help me and to style this componet in a more organized way */
 
-const StyledHeader = styled.li`
-  margin-bottom: 20px;
+const StyledHeader = styled.div`
   color: #fff;
   width: 60vw;
   height: fit-content;
@@ -32,6 +31,7 @@ const StyledHeader = styled.li`
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
   .item {
     display: flex;
     align-items: center;

@@ -1,7 +1,11 @@
+import { useState } from "react";
+
 import styled from "styled-components";
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
+  const [addNewExpense, setAddNewExpense] = useState(false);
+
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
@@ -10,11 +14,16 @@ const NewExpense = (props) => {
 
     //My parente App component called NewExpense and sent to him props. So NewExpense compenent receives the reference to the parent function as a prop.
     props.onAddExpense(expenseData);
+    setAddNewExpense(false);
   };
 
   return (
     <StyledNewExpense>
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+      {addNewExpense ? (
+        <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+      ) : (
+        <button onClick={() => setAddNewExpense(true)}>Add new expense</button>
+      )}
     </StyledNewExpense>
   );
 };
@@ -27,9 +36,23 @@ handler this data that i recieved as props, so I'll copy the enterdExpenseData a
  */
 
 const StyledNewExpense = styled.div`
-  width: 70vw;
-  height: 30vh;
-  border-radius: 8px;
   padding: 10px;
+  width: 70%;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+  text-align: left;
   background-color: rgb(222, 185, 242);
+
+  button {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    background-color: rgb(222, 35, 232);
+  }
 `;

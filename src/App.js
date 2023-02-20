@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Expenses from "./components/expense/Expenses";
-import NewExpense from "./components/newExpense/NewExpense";
+import Expenses from "./components/Expense/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 const DUMMY_EXPENSES = [
   { title: "Car Insurance", amount: 24.16, date: new Date(2022, 6, 8) },
   { title: "Toilet paper", amount: 297.76, date: new Date(2021, 3, 28) },
@@ -36,12 +36,12 @@ As I want that app receive props from the child NewExpense I'll need create my o
 */
 
 const StyledApp = styled.div`
-  padding: 20px;
-  width: 100vw;
+  padding: 10px;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
   align-items: center;
   background-color: #201f1fc5;
 `;

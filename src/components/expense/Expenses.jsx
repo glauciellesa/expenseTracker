@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import ExpensesFilter from "../expensesFilter/ExpensesFilter";
+import ExpensesFilter from "../ExpensesFilter/ExpensesFilter";
 import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
@@ -27,11 +27,10 @@ const Expenses = (props) => {
 export default Expenses;
 
 const StyledExpense = styled.div`
-  margin-top: 20px;
-  padding: 20px 0 40px 0;
+  padding: 20px 10px 40px 10px;
   background-color: #343434;
   border-radius: 8px;
-  width: 75%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   gap: 20px;
