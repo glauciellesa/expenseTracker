@@ -18,10 +18,6 @@ const ChartBar = (props) => {
 export default ChartBar;
 
 const StyledChartBar = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   .barInner {
     height: 100%;
     width: 100%;
