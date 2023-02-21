@@ -22,7 +22,8 @@ export default Chart;
 
 const StyledChart = styled.div`
   width: 80%;
-  padding: 16px;
+  padding: 16px 56px;
+
   border-radius: 8px;
   background-color: rgb(222, 185, 242);
   height: 160px;
@@ -32,5 +33,6 @@ const StyledChart = styled.div`
   text-align: center;
   @media (max-width: 400px) {
     width: 100%;
+    padding: 16px;
   }
 `;
