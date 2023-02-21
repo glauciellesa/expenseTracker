@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import ExpenseGrafic from "../Chart/ChartBar";
 import YearOption from "./YearOption";
 
 const ExpensesFilter = (props) => {
