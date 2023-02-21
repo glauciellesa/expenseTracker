@@ -21,7 +21,7 @@ export default ExpenseDate;
  a string, using toLocalString("country", "what: wich format") to get my month, my day and year and after that i'll return each variavle into a div */
 
 const StyledDate = styled.div`
-  width: 50px;
+  width: 60px;
   padding: 10px;
   background-color: #201f1fc5;
   border: 2px solid #fff;
