@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ExpenseGrafic from "../Chart/ExpenseGrafic";
+import ExpenseGrafic from "../Chart/ChartBar";
 import YearOption from "./YearOption";
 
 const ExpensesFilter = (props) => {
@@ -18,7 +18,6 @@ const ExpensesFilter = (props) => {
           <YearOption yearOption={year} />
         </select>
       </div>
-      <ExpenseGrafic />
     </StyledFilter>
   );
 };

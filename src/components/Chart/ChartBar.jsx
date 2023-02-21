@@ -1,20 +1,6 @@
 import styled from "styled-components";
 
-const ExpenseGrafic = () => {
-  const month = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
+const ChartBar = () => {
   return (
     <StyledGrafic>
       <div className="container">
@@ -28,7 +14,7 @@ const ExpenseGrafic = () => {
   );
 };
 
-export default ExpenseGrafic;
+export default ChartBar;
 
 const StyledGrafic = styled.div`
   .container {

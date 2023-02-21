@@ -20,7 +20,7 @@ export default ExpenseItem;
 /* Into this component i'll render each props insid a div. Because i'm working with date i'll create another component
 to help me and to style this componet in a more organized way */
 
-const StyledHeader = styled.div`
+const StyledHeader = styled.li`
   color: #fff;
   width: 60vw;
   height: fit-content;

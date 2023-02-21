@@ -20,7 +20,10 @@ const NewExpense = (props) => {
   return (
     <StyledNewExpense>
       {addNewExpense ? (
-        <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+        <ExpenseForm
+          onSaveExpenseData={saveExpenseDataHandler}
+          setAddNewExpense={setAddNewExpense}
+        />
       ) : (
         <button onClick={() => setAddNewExpense(true)}>Add new expense</button>
       )}

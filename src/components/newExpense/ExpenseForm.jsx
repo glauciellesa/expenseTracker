@@ -31,7 +31,9 @@ const ExpenseForm = (props) => {
     setEntiredAmount("");
     setEntiredDate("");
   };
-
+  const cancelButtonHandler = () => {
+    props.setAddNewExpense(false);
+  };
   return (
     <StyledExpenseForm onSubmit={submitHandlerForm}>
       <div className="new-expense__control">
@@ -61,8 +63,8 @@ const ExpenseForm = (props) => {
           required
         />
       </div>
-
       <div className="new-expense__actions">
+        <button onClick={cancelButtonHandler}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </StyledExpenseForm>
@@ -106,6 +108,7 @@ const StyledExpenseForm = styled.form`
   font-weight: 700;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 15px;
   flex-wrap: wrap;
   width: 100%;
@@ -126,14 +129,15 @@ const StyledExpenseForm = styled.form`
     padding: 0 3px;
     border-radius: 4px;
     border: none;
-    width: 30vw;
     height: 40px;
+    width: 30vw;
     background-color: #fff;
   }
   .new-expense__actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     padding: 10px;
-
-    right: 20%;
   }
 
   button {
