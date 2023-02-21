@@ -21,15 +21,15 @@ export default ExpenseItem;
 to help me and to style this componet in a more organized way */
 
 const StyledHeader = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #fff;
-  width: 60vw;
   height: fit-content;
   border-radius: 5px;
   padding: 20px;
   background-color: #636363;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   margin-bottom: 20px;
   .item {

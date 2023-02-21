@@ -22,7 +22,6 @@ function App() {
 
   return (
     <StyledApp>
-      <h1> Let's get started! </h1>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </StyledApp>
@@ -36,12 +35,10 @@ As I want that app receive props from the child NewExpense I'll need create my o
 */
 
 const StyledApp = styled.div`
-  padding: 10px;
+  padding: 30px;
   width: 100%;
-  height: 100vh;
+
   display: flex;
   flex-direction: column;
-
   align-items: center;
-  background-color: #201f1fc5;
 `;

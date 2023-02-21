@@ -135,6 +135,11 @@ const StyledExpenseForm = styled.form`
     width: 30vw;
     background-color: #fff;
   }
+  @media (max-width: 400px) {
+    input {
+      width: 80vw;
+    }
+  }
   .new-expense__actions {
     display: flex;
     justify-content: center;
