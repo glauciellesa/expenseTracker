@@ -20,7 +20,7 @@ const ExpenseForm = (props) => {
     event.preventDefault(); // will prevent the page from refresh once the button is clicked
     const expenseData = {
       title: entiredTitle,
-      amount: entiredAmount,
+      amount: +entiredAmount,
       date: new Date(entiredDate), //As entiredData is a string I'll need to convert it to a objetct using the constroctur new Data()
     };
 
@@ -48,7 +48,7 @@ const ExpenseForm = (props) => {
       <div className="new-expense__control">
         <label htmlFor="title">Amount</label>
         <input
-          type="string"
+          type="number"
           value={entiredAmount}
           onChange={amountChangeHandler}
           required
