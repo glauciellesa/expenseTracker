@@ -1,42 +1,46 @@
 import styled from "styled-components";
 
-const ChartBar = () => {
+const ChartBar = (props) => {
+  let barFillHeight = "0%";
+  if (props.maxValue > 0) {
+    barFillHeight = Math.round((props.value / props.maxValue) * 100) + "%";
+  }
   return (
-    <StyledGrafic>
-      <div className="container">
-        {month.map((eachMonth) => (
-          <div key={eachMonth} className="content">
-            {eachMonth}
-          </div>
-        ))}
+    <StyledChartBar>
+      <div className="barInner">
+        <div className="barFill" style={{ height: barFillHeight }}></div>
       </div>
-    </StyledGrafic>
+      <div className="barLabel">{props.label}</div>
+    </StyledChartBar>
   );
 };
 
 export default ChartBar;
 
-const StyledGrafic = styled.div`
-  .container {
-    height: 120px;
-    border-radius: 8px;
-    background-color: rgb(222, 185, 242);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    color: black;
-    font-size: smaller;
-    margin: 0px 15px;
-    gap: 10px;
-    width: 10px;
-    height: 80px;
-    border-radius: 10px;
+const StyledChartBar = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .barInner {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #313131;
+    border-radius: 12px;
     background-color: rgb(222, 156, 242);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .barFill {
+    background-color: rgb(192, 15, 246);
+    width: 100%;
+    transition: all 0.3s ease-out;
+  }
+  .barLabel {
+    font-weight: bold;
+    font-size: 8px;
+    text-align: center;
   }
 `;
