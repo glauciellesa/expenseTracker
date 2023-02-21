@@ -25,7 +25,9 @@ const NewExpense = (props) => {
           setAddNewExpense={setAddNewExpense}
         />
       ) : (
-        <button onClick={() => setAddNewExpense(true)}>Add new expense</button>
+        <button type="button" onClick={() => setAddNewExpense(true)}>
+          Add new expense
+        </button>
       )}
     </StyledNewExpense>
   );
