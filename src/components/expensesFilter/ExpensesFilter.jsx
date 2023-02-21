@@ -25,7 +25,6 @@ const ExpensesFilter = (props) => {
 export default ExpensesFilter;
 
 const StyledFilter = styled.div`
-  width: 75%;
   color: #fff;
   font-size: 20px;
   .filter {
@@ -36,6 +35,7 @@ const StyledFilter = styled.div`
     align-items: center;
   }
   select {
+    margin-left: 10px;
     height: 30px;
     border-radius: 4px;
     padding: 0 25px;

@@ -30,4 +30,7 @@ const StyledChart = styled.div`
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
+  @media (max-width: 400px) {
+    width: 100%;
+  }
 `;

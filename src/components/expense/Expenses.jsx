@@ -38,6 +38,9 @@ const StyledExpense = styled.div`
   gap: 20px;
   justify-content: center;
   align-items: center;
+  @media (max-width: 400px) {
+    width: 100%;
+  }
 `;
 
 /*

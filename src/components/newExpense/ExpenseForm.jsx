@@ -105,7 +105,7 @@ const expenseData = {
 */
 
 const StyledExpenseForm = styled.form`
-  padding: 10px 40px;
+  padding: 10px;
   font-size: 1.5rem;
   font-weight: 700;
   display: flex;
@@ -143,6 +143,7 @@ const StyledExpenseForm = styled.form`
   .new-expense__actions {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 10px;
   }

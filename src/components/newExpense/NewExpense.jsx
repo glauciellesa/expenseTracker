@@ -41,8 +41,8 @@ handler this data that i recieved as props, so I'll copy the enterdExpenseData a
  */
 
 const StyledNewExpense = styled.div`
-  padding: 10px;
   width: 70%;
+  padding: 20px;
   border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
@@ -50,7 +50,10 @@ const StyledNewExpense = styled.div`
   margin-bottom: 1rem;
   text-align: left;
   background-color: rgb(222, 185, 242);
-
+  @media (max-width: 400px) {
+    padding: 0;
+    width: 100%;
+  }
   button {
     font-size: 1rem;
     font-weight: 700;
